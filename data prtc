@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul 26 04:39:30 2019
+
+@author: Administrator
+"""
+
+import pandas as pd, numpy as np, matplotlib.pyplot as plt
+df = pd.read_csv("D:/Data Science Training/HR_comma_sep.csv")
+
+df.describe()
+
+df["satisfaction_level"].describe()
+
+df["satisfaction_level"].plot(kind="box")
+
+plt.boxplot(df["satisfaction_level"],showmeans=True)
+
+df["satisfaction_level"].plot(kind="hist")
+
+plt.hist(df["satisfaction_level"],bins=30)
+
+df["satisfaction_level"].var()
+df["satisfaction_level"].std()
+df["satisfaction_level"].mean()
+
+df["satisfaction_level"].std()/df["satisfaction_level"].mean() *100
+
+df["satisfaction_level"].skew()
+
+df["satisfaction_level"].kurtosis()
+
+
+df["sales"].unique()
+
+df["salary"].unique()
+pd.crosstab(df["sales"],df["salary"]).plot(kind="bar")
